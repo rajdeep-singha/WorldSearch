@@ -15,8 +15,8 @@ const STEP_LABELS: Record<ResearchStep, string> = {
 const STEP_ORDER: ResearchStep[] = ['planning', 'searching', 'reading', 'verifying', 'done']
 
 // Advance through fake progress steps while waiting for the API
-function useResearchProgress(loading: boolean, step: ResearchStep, setDeepResearch: (d: Parameters<ReturnType<typeof useStore>['setDeepResearch']>[0]) => void) {
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+function useResearchProgress(loading: boolean, step: ResearchStep, setDeepResearch: (d: Partial<import('../../store/useStore').DeepResearch>) => void) {
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   useEffect(() => {
     if (!loading || step === 'done') return

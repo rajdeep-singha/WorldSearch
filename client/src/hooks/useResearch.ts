@@ -18,7 +18,7 @@ const MOCK_FOCAL = [
 
 export function useResearch() {
   const { setInsights } = useStore()
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined)
 
   const fetchInsights = async () => {
     setInsights({ loading: true })
