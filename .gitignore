@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.local
+.DS_Store
+client/public/bg1.mp4
+client/public/bg.mp4
